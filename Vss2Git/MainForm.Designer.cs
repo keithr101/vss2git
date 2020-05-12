@@ -67,6 +67,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.anyCommentUpDown = new System.Windows.Forms.NumericUpDown();
             this.ignoreErrorsCheckBox = new System.Windows.Forms.CheckBox();
+            this.dontInitGitCheckBox = new System.Windows.Forms.CheckBox();
             this.vssGroupBox.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.outputGroupBox.SuspendLayout();
@@ -89,7 +90,7 @@
             this.vssGroupBox.Controls.Add(this.vssDirLabel);
             this.vssGroupBox.Location = new System.Drawing.Point(12, 12);
             this.vssGroupBox.Name = "vssGroupBox";
-            this.vssGroupBox.Size = new System.Drawing.Size(560, 126);
+            this.vssGroupBox.Size = new System.Drawing.Size(661, 126);
             this.vssGroupBox.TabIndex = 0;
             this.vssGroupBox.TabStop = false;
             this.vssGroupBox.Text = "VSS Settings";
@@ -234,6 +235,7 @@
             this.outputGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.outputGroupBox.Controls.Add(this.ignoreErrorsCheckBox);
+            this.outputGroupBox.Controls.Add(this.dontInitGitCheckBox);
             this.outputGroupBox.Controls.Add(this.commentTextBox);
             this.outputGroupBox.Controls.Add(this.commentLabel);
             this.outputGroupBox.Controls.Add(this.forceAnnotatedCheckBox);
@@ -246,7 +248,7 @@
             this.outputGroupBox.Controls.Add(this.logLabel);
             this.outputGroupBox.Location = new System.Drawing.Point(12, 144);
             this.outputGroupBox.Name = "outputGroupBox";
-            this.outputGroupBox.Size = new System.Drawing.Size(560, 150);
+            this.outputGroupBox.Size = new System.Drawing.Size(661, 150);
             this.outputGroupBox.TabIndex = 1;
             this.outputGroupBox.TabStop = false;
             this.outputGroupBox.Text = "Output Settings";
@@ -437,13 +439,24 @@
             // ignoreErrorsCheckBox
             //
             this.ignoreErrorsCheckBox.AutoSize = true;
-            this.ignoreErrorsCheckBox.Location = new System.Drawing.Point(422, 97);
+            this.ignoreErrorsCheckBox.Location = new System.Drawing.Point(422, 123);
             this.ignoreErrorsCheckBox.Name = "ignoreErrorsCheckBox";
             this.ignoreErrorsCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ignoreErrorsCheckBox.Size = new System.Drawing.Size(101, 17);
             this.ignoreErrorsCheckBox.TabIndex = 8;
             this.ignoreErrorsCheckBox.Text = "Ignore Git errors";
             this.ignoreErrorsCheckBox.UseVisualStyleBackColor = true;
+            //
+            // dontInitGitCheckBox
+            //
+            this.dontInitGitCheckBox.AutoSize = true;
+            this.dontInitGitCheckBox.Location = new System.Drawing.Point(523, 123);
+            this.dontInitGitCheckBox.Name = "dontInitGitCheckBox";
+            this.dontInitGitCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dontInitGitCheckBox.Size = new System.Drawing.Size(101, 17);
+            this.dontInitGitCheckBox.TabIndex = 8;
+            this.dontInitGitCheckBox.Text = "Don't call git Init";
+            this.dontInitGitCheckBox.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -451,7 +464,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(584, 429);
+            this.ClientSize = new System.Drawing.Size(685, 429);
             this.Controls.Add(this.changesetGroupBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.outputGroupBox);
@@ -517,6 +530,7 @@
         private System.Windows.Forms.CheckBox transcodeCheckBox;
         private System.Windows.Forms.CheckBox forceAnnotatedCheckBox;
         private System.Windows.Forms.CheckBox ignoreErrorsCheckBox;
+        private System.Windows.Forms.CheckBox dontInitGitCheckBox;
         private System.Windows.Forms.TextBox commentTextBox;
         private System.Windows.Forms.Label commentLabel;
     }

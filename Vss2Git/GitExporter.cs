@@ -38,6 +38,7 @@ namespace Hpdi.Vss2Git
         private readonly StreamCopier streamCopier = new StreamCopier();
         private readonly HashSet<string> tagsUsed = new HashSet<string>();
         private bool ignoreErrors = false;
+        private bool dontInitGit = false;
         private string defaultComment = "";
 
         private string emailDomain = "localhost";
@@ -65,6 +66,12 @@ namespace Hpdi.Vss2Git
         {
             get { return ignoreErrors; }
             set { ignoreErrors = value; }
+        }
+
+        public bool DontInitGit
+        {
+            get { return dontInitGit; }
+            set { dontInitGit = value; }
         }
 
         public string DefaultComment
@@ -113,9 +120,11 @@ namespace Hpdi.Vss2Git
                     }
                 }
 
-                if (!RetryCancel(delegate { git.Init(); }))
-                {
-                    return;
+                if (!dontInitGit) {
+                    if (!RetryCancel(delegate { git.Init(); }))
+                    {
+                        return;
+                    }
                 }
 
                 if (commitEncoding.WebName != "utf-8")
